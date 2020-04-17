@@ -1,0 +1,16 @@
+C:\Users\samya\source\repos\OOSE\OOSE\bin\Debug\OOSE.exe.config
+C:\Users\samya\source\repos\OOSE\OOSE\bin\Debug\OOSE.exe
+C:\Users\samya\source\repos\OOSE\OOSE\bin\Debug\OOSE.pdb
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.csprojAssemblyReference.cache
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.Login_Page.resources
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.Properties.Resources.resources
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.SIGNUP.resources
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.WELCOME.resources
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.csproj.GenerateResource.cache
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.exe
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.pdb
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.Category.resources
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.Questions.resources
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.Questionlist.resources
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.ShowTopics.resources
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.Answer.resources
