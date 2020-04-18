@@ -52,6 +52,12 @@
     <Compile Include="Answer.Designer.cs">
       <DependentUpon>Answer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Answerview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Answerview.Designer.cs">
+      <DependentUpon>Answerview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="Answer.resx">
       <DependentUpon>Answer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Answerview.resx">
+      <DependentUpon>Answerview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Category.resx">
       <DependentUpon>Category.cs</DependentUpon>

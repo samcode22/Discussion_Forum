@@ -14,66 +14,51 @@ namespace OOSE
     {
         string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\samya\Documents\discuss.mdf;Integrated Security=True";
 
-        public Answer(DataGridViewCellEventArgs e, string userid)
+        public Answer(string userid)
         {
             InitializeComponent();
-            label1.Text = userid;
-            if (e.ColumnIndex == 2)
+            label4.Text = userid;
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\samya\Documents\discuss.mdf;Integrated Security=True");
+            con.Open();
+
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Questions";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
             {
-                using (SqlConnection con = new SqlConnection(connection_string))
-                {
-                    con.Open();
-                    int i = e.RowIndex + 1;
-                    if (i == 1)
-                    {
-                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Answer FROM Answer where QuestionId = 1", con);
-                        DataTable dt = new DataTable();
-                        cmd.Fill(dt);
-                        dataGridView1.DataSource = dt;
-
-                    
-
-                    }
-                    if (i == 2)
-                    {
-                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Ques where CategoryId = 2", con);
-                        DataTable dt = new DataTable();
-                        cmd.Fill(dt);
-                        dataGridView1.DataSource = dt;
-                       
-                    }
-                    if (i == 3)
-                    {
-                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Ques where CategoryId = 3", con);
-                        DataTable dt = new DataTable();
-                        cmd.Fill(dt);
-                        dataGridView1.DataSource = dt;
-                       
-                    }
-                    if (i == 4)
-                    {
-                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Ques where CategoryId = 4", con);
-                        DataTable dt = new DataTable();
-                        cmd.Fill(dt);
-                        dataGridView1.DataSource = dt;
-                       
-                    }
-                    if (i == 5)
-                    {
-                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Ques where CategoryId = 5", con);
-                        DataTable dt = new DataTable();
-                        cmd.Fill(dt);
-                        dataGridView1.DataSource = dt;
-                     
-                    }
-
-                }
+                comboBox1.Items.Add(dr["Question"].ToString());
             }
+            con.Close();
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = comboBox1.SelectedItem.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\samya\Documents\discuss.mdf;Integrated Security=True");
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("Insert into Answer(Question,UserId,Answer) Values('" + textBox1.Text + "','" + label4.Text + "','" + textBox2.Text + "')", con);
+
+
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Answer added successfully!!!");
+
+            con.Close();
         }
     }
 }

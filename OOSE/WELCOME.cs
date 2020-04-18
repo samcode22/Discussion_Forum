@@ -59,6 +59,12 @@ namespace OOSE
 
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Answer d = new Answer(label2.Text);
+            d.Show();
+        }
     }
     }
 

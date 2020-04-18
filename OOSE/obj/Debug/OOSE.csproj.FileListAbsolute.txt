@@ -14,3 +14,4 @@ C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.Questions.resources
 C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.Questionlist.resources
 C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.ShowTopics.resources
 C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.Answer.resources
+C:\Users\samya\source\repos\OOSE\OOSE\obj\Debug\OOSE.Answerview.resources

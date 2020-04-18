@@ -27,7 +27,7 @@ namespace OOSE
                     int i = e.RowIndex + 1;
                     if (i == 1)
                     {
-                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Ques where CategoryId = 1", con);
+                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Questions,CATEGORY where CategoryId = 1", con);
                         DataTable dt = new DataTable();
                         cmd.Fill(dt);
                         dataGridView1.DataSource = dt;
@@ -42,7 +42,7 @@ namespace OOSE
                     }
                     if (i == 2)
                     {
-                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Ques where CategoryId = 2", con);
+                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Questions,CATEGORY where CategoryId = 2", con);
                         DataTable dt = new DataTable();
                         cmd.Fill(dt);
                         dataGridView1.DataSource = dt;
@@ -55,7 +55,7 @@ namespace OOSE
                     }
                     if (i == 3)
                     {
-                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Ques where CategoryId = 3", con);
+                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Questions,CATEGORY where CategoryId = 3", con);
                         DataTable dt = new DataTable();
                         cmd.Fill(dt);
                         dataGridView1.DataSource = dt;
@@ -68,7 +68,7 @@ namespace OOSE
                     }
                     if (i == 4)
                     {
-                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Ques where CategoryId = 4", con);
+                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Questions,CATEGORY where CategoryId = 4", con);
                         DataTable dt = new DataTable();
                         cmd.Fill(dt);
                         dataGridView1.DataSource = dt;
@@ -79,9 +79,67 @@ namespace OOSE
                         link.Text = "Answers";
                         link.UseColumnTextForButtonValue = true;
                     }
+                    if (i == 9)
+                    {
+                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Questions,CATEGORY where CategoryId = 9", con);
+                        DataTable dt = new DataTable();
+                        cmd.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                        DataGridViewButtonColumn link = new DataGridViewButtonColumn();
+                        dataGridView1.Columns.Add(link);
+                        link.HeaderText = "Answers";
+                        link.Name = "View_Topic";
+                        link.Text = "Answers";
+                        link.UseColumnTextForButtonValue = true;
+                    }
+
                     if (i == 5)
                     {
-                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Ques where CategoryId = 5", con);
+                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Questions,CATEGORY where CategoryId = 5", con);
+                        DataTable dt = new DataTable();
+                        cmd.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                        DataGridViewButtonColumn link = new DataGridViewButtonColumn();
+                        dataGridView1.Columns.Add(link);
+                        link.HeaderText = "Answers";
+                        link.Name = "View_Topic";
+                        link.Text = "Answers";
+                        link.UseColumnTextForButtonValue = true;
+                    }
+
+
+                    if (i == 6)
+                    {
+                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Questions,CATEGORY where CategoryId = 6", con);
+                        DataTable dt = new DataTable();
+                        cmd.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                        DataGridViewButtonColumn link = new DataGridViewButtonColumn();
+                        dataGridView1.Columns.Add(link);
+                        link.HeaderText = "Answers";
+                        link.Name = "View_Topic";
+                        link.Text = "Answers";
+                        link.UseColumnTextForButtonValue = true;
+                    }
+
+
+                    if (i == 7)
+                    {
+                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Questions,CATEGORY where CategoryId = 7", con);
+                        DataTable dt = new DataTable();
+                        cmd.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                        DataGridViewButtonColumn link = new DataGridViewButtonColumn();
+                        dataGridView1.Columns.Add(link);
+                        link.HeaderText = "Answers";
+                        link.Name = "View_Topic";
+                        link.Text = "Answers";
+                        link.UseColumnTextForButtonValue = true;
+                    }
+
+                    if (i == 8)
+                    {
+                        SqlDataAdapter cmd = new SqlDataAdapter("SELECT UserId,Question FROM Questions,CATEGORY where CategoryId = 8", con);
                         DataTable dt = new DataTable();
                         cmd.Fill(dt);
                         dataGridView1.DataSource = dt;
@@ -106,10 +164,11 @@ namespace OOSE
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Answer a = new Answer(e,label1.Text);
+            textBox1.Text = dataGridView1[e.ColumnIndex+2, e.RowIndex].Value.ToString();
+            Answerview a = new Answerview(textBox1.Text);
 
             a.Show();
                 
-                   }
+        }
     }
 }
